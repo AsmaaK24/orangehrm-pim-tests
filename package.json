@@ -1,0 +1,21 @@
+{
+  "name": "orangehrm-pim-tests",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript UI tests for the OrangeHRM demo (PIM module)",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.3"
+  }
+}
