@@ -35,7 +35,7 @@ logs in, creates an employee, searches for them, opens the details, edits the
 name, nationality, marital status and gender, then reloads the page and checks
 the values were persisted (and that the list shows the new name).
 
-**Additional PIM scenarios** (`tests/pim/employee-regression.spec.ts`), picked
+**Additional PIM scenarios** (`tests/pim/employee-additionalscenarios-regression.spec.ts`), picked
 because they protect the basic rules of the module:
 
 1. Add employee requires first and last name.
@@ -59,7 +59,7 @@ tests/
   auth.setup.ts              logs in once and stores the session
   auth/login.spec.ts
   pim/employee-workflow.spec.ts
-  pim/employee-regression.spec.ts
+  pim/employee-additionalscenarios-regression.spec.ts
 ```
 
 ## Design choices
