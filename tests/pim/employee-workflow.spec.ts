@@ -24,7 +24,8 @@ test(
       await addEmployeePage.fillForm(employee);
       const empNumber = await addEmployeePage.saveAndGetEmpNumber();
       employeeApi.track(empNumber); // removed again in the fixture teardown
-      await addEmployeePage.expectToast('Successfully Saved');
+     await personalDetailsPage.waitUntilLoaded();
+     await personalDetailsPage.expectName(employee.firstName, employee.lastName);
     });
 
     await test.step('Search for the created employee', async () => {

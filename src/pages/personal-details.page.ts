@@ -1,6 +1,7 @@
 import { expect } from '@playwright/test';
 import { EmployeeUpdate } from '../data/employee.data';
 import { BasePage } from './base.page';
+import { EmployeeListPage } from './employee-list.page';
 
 export class PersonalDetailsPage extends BasePage {
   private readonly firstName = this.page.getByPlaceholder('First Name');
@@ -29,7 +30,11 @@ export class PersonalDetailsPage extends BasePage {
 
   async save(): Promise<void> {
     await this.saveButton.click();
-    await this.expectToast('Successfully Updated');
+  }
+
+  async expectName(firstName: string, lastName: string): Promise<void> {
+    await expect(this.firstName).toHaveValue(firstName);
+    await expect(this.lastName).toHaveValue(lastName);
   }
 
   async expectDetails(expected: EmployeeUpdate): Promise<void> {
