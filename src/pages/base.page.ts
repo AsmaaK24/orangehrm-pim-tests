@@ -7,9 +7,9 @@ import { expect, Locator, Page } from '@playwright/test';
 export abstract class BasePage {
   constructor(protected readonly page: Page) {}
 
-  async expectToast(message: string | RegExp): Promise<void> {
-    await expect(this.page.locator('.oxd-toast').first()).toContainText(message);
-  }
+   async expectToast(message: string | RegExp): Promise<void> {
+     await expect(this.page.locator('.oxd-toast').first()).toContainText(message);
+   }
 
   /** The wrapper that holds a label and its field, found by the visible label text. */
   protected fieldGroup(label: string, scope: Locator | Page = this.page): Locator {
